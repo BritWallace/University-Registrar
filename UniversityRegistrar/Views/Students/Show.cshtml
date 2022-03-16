@@ -1,0 +1,11 @@
+@{
+  Layout = "_Layout";
+}
+<div id="color">
+  <h1>University Registration - Student Details: </h1>
+
+  <h2>@Model["student"].Name</h2>
+  <h3>Course: @Model["course"].Name</h3>
+</div>
+<a href='/courses/@Model["course"].Id/students/new'>Add another Student</a>
+<a href='/courses'>View all Courses</a>
