@@ -1,7 +1,7 @@
 @{
   Layout = "_Layout";
 }
-
+@using UniversityRegistrar.Models;
 @model UniversityRegistrar.Models.Student
 
 <h2>Student Details</h2>
@@ -19,9 +19,9 @@ else
   @foreach (var join in Model.CourseStudentEntity)
     {
       <li>@join.course.Name</li>
-
+      <p>Completed: @join.Completed</p>
       @using (Html.BeginForm("DeleteCourse", "Students"))
-  {
+      {
         @Html.Hidden("joinId", @join.CourseStudentId)
         <input type="submit" value="Delete" />
       }
@@ -32,6 +32,5 @@ else
 <p>@Html.ActionLink("Add a Course", "AddCourse", new { id = Model.StudentId })</p>
 
 <p>@Html.ActionLink("Back to list", "Index")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
 <p>@Html.ActionLink("Edit Student", "Edit", new { id = Model.StudentId })</p>
 <p>@Html.ActionLink("Delete Item", "Delete", new { id = Model.StudentId })</p>

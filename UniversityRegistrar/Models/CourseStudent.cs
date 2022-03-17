@@ -12,4 +12,10 @@ namespace UniversityRegistrar.Models
     public virtual Course course { get; set; }
     public bool Completed { get; set; }
   }
+
+  public enum Progress
+  {
+    Completed, 
+    NotCompleted
+  }
 }

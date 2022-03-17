@@ -13,7 +13,8 @@
 - MySql Database
 
 ## Description
-
+  var myList = new SelectList("In Prog", "Completed", "Not Completed");
+  @Html.DropDownList("Completed", myList);
 This application allows the user to enter.....
 
 Database Structure
@@ -57,3 +58,19 @@ britwallace888@gmail.com
 
 Copyright (c) March 2022 Brit Wallace and Christen Weston.
 
+
+@using .Models
+
+@model CourseStudent
+
+@Html.DropDownListFor(m => m.Completed, 
+            new SelectList(Enum.GetValues(typeof(Progress))), 
+            "Select Course")
+            new { @class = "form-control" }) -->
+
+    <!-- <select class="form-control" id="CompletedCourses" name="CompletedCourses">
+    <option>Select completed<option> 
+    <option>Yes</option> 
+    <option>No</option> 
+    <option>In progress</option
+</select> -->

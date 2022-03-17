@@ -1,7 +1,7 @@
 @{
   Layout = "_Layout";
 }
-
+@using UniversityRegistrar.Models;
 @model UniversityRegistrar.Models.Student
 
 <h2>Edit</h2>
@@ -14,9 +14,6 @@
 
   @Html.LabelFor(model => model.Name)
   @Html.EditorFor(model => model.Name)
-
-  //@Html.LabelFor(model => model.Completed)
-  //@Html.EditorFor(model => model.Completed)
 
   //@Html.LabelFor(model => model.DueDate)
   //@Html.EditorFor(model => model.DueDate)
