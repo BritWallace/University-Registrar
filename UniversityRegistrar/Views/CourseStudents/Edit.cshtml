@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+@using UniversityRegistrar.Models;
+@model UniversityRegistrar.Models.CourseStudent
+
+<h2>Edit</h2>
+
+<h4>Complete this class: @Html.DisplayFor(model => model.course.Name)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.CourseStudentId)
+  @Html.LabelFor(model => model.CourseId)
+  @Html.EditorFor(model => model.CourseId)
+
+  @Html.LabelFor(model => model.StudentId)
+  @Html.EditorFor(model => model.StudentId)
+
+  @Html.LabelFor(model => model.Completed)
+  @Html.EditorFor(model => model.Completed)
+
+  <input type="submit" value="Save"/>
+}
